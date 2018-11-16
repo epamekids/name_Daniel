@@ -1,0 +1,12 @@
+.demo-card-wide.mdl-card {
+    width: 512px;
+  }
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('http://home-secret.ru/wp-content/uploads/2012/10/home1463.jpg') center / cover;
+    margin: 10px;
+  }
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="utf-8">
+    <style media="screen">
+      .cat {
+        position: absolute;
+        border: 2px solid silver;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        var i =0
+        function printB () {
+          i++
+          var blocks = $("<div>", {
+            "class": "cat",
+            "id": "test_" + i,
+            "style": "margin-top:"+getRandomInt(0, 600)+"px; margin-left:"+getRandomInt(0, 800)+"px; background-color: "+randomColor()+"; ",
+          }).html("").click( function() {
+            if ($(this).css('background-color') == 	'rgb(255, 128, 0)' ) {
+              console.log("game over")
+              $(this).remove()
+              setTimeout(printB, 5000);
+            } else {
+              $(this).remove()
+            }
+          })
+          $("body").append(blocks)
+          setTimeout(printB, 300)
+        }
+        printB()
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function randomColor(){
+          var colors = ['#FF8000','#D2691E',' #F08080', '#F0E68C'];
+          var random_color = colors[ Math.floor(Math.random() * colors.length) ];
+          return random_color;
+        }
+      })
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

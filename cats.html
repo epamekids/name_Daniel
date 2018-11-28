@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>	
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script>
 		function catLoader () {
 			$.get("http://aws.random.cat/meow").done(
@@ -13,7 +13,7 @@
 		}
 	</script>
 </head>
-<body>
+<body ononline="catLoader()">
 	<div id="cat"></div>
 	<style type="text/css">
 		img {
@@ -21,6 +21,6 @@
 			height: 400px;
 		}
 	</style>
-	<button onmousemove="catLoader()">Cat pleaseeee!</button>
+	<button>Cat pleaseeee!</button>
 </body>
 </html>
